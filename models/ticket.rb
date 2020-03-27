@@ -19,4 +19,9 @@ class Ticket
     @id = SQLRunner.run(sql, values)[0]['id'].to_i
   end
 
+  def self.delete_all
+    sql = 'DELETE FROM tickets'
+    SQLRunner.run(sql)
+  end
+
 end
