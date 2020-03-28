@@ -37,10 +37,7 @@ class Film
   end
 
   def attendance()
-    sql = 'SELECT customers.* FROM customers INNER JOIN tickets ON customers.id = tickets.customer_id WHERE film_id = $1'
-    values = [@id]
-    customer_data = SQLRunner.run(sql, values)
-    return customer_data.count
+    return self.customers.count
   end
 
   def self.delete_all()
